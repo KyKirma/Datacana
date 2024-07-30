@@ -86,6 +86,28 @@ $(document).ready(function () {
               });
 
             observer.observe(el)
+
+            const ctx = document.getElementById('myChart');
+            const labels = Object.values(response.data.MUNICIPIO);
+            const data = Object.values(response.data.AREA_HA);
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Área em Km²',
+                    data: data,
+                    borderWidth: 1
+                }]
+                },
+                options: {
+                scales: {
+                    y: {
+                    beginAtZero: true
+                    }
+                }
+                }
+            });
         })
     .catch(function (error) {
             console.error("Error fetching data:", error);
