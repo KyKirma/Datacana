@@ -64,6 +64,7 @@ $(document).ready(function () {
                 totalAreaHa += response.data['AREA_HA'][i];
             }
             
+            // Update Quadro de Informações
             info.update = function (props) {
                 if (props) {
                     let municipio = props.municipio;

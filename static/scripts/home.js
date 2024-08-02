@@ -38,6 +38,7 @@ $(document).ready(function () {
                 return Math.max(radius, 2);
             }
 
+            // Montagem do Mapa
             jQuery.getJSON("https://servicodados.ibge.gov.br/api/v2/malhas/31?formato=application/vnd.geo+json", function(JSON) {
                 var layer = new L.geoJSON(JSON, estilos.uf);   
                 var ufExtent = layer.getBounds();
@@ -87,6 +88,7 @@ $(document).ready(function () {
 
             observer.observe(el)
 
+            // Chart
             const ctx = document.getElementById('myChart');
             const labels = Object.values(response.data.MUNICIPIO);
             const data = Object.values(response.data.AREA_HA);
