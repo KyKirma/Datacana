@@ -24,6 +24,12 @@ def getData(year):
                    qnt = qnt,
                    totalArea = totalArea)
 
+@app.route('/data/resume/<int:year>', methods = ['GET'])
+def getDataResume(year):
+    import pandas as pd
+    df = pd.read_csv(f'cache/CSVs/Data_{year}_Resume.csv')
+    return jsonify(df.to_dict())
+
 @app.route('/downloads/data/<int:year>', methods = ['GET'])
 def downloadData(year):
     return send_file(f"cache/CSVs/Data_{year}.csv", as_attachment = True)

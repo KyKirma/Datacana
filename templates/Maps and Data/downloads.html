@@ -45,6 +45,16 @@
             </div>
         </div>
     </div>
+
+    <div class="content">
+        <div class="container">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../static/scripts/charts.js"></script>
+    
 {% endblock %}
 
 {% block estilo %}
@@ -56,6 +66,11 @@
                 margin: 25px 0px;
                 padding: 24px 0px;
             }
+        }
+
+        #myChart {
+            width: 100%;
+            height: 400px;
         }
     </style>
 {% endblock %}
